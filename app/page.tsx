@@ -6,8 +6,9 @@ export default function ProfilePage() {
   return (
     <main className="min-h-screen bg-[#0a192f] text-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-[#0a192f] text-white py-32">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10"></div>
+      <section className="relative bg-[#0a192f] text-white py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-60 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-transparent to-[#0a192f]"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex flex-col items-center text-center space-y-8">
             <div className="relative w-48 h-48 mb-8">
@@ -17,6 +18,7 @@ export default function ProfilePage() {
                   src="/images/me.jpg"
                   alt="Adolfo Martinez"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                   priority
                 />
