@@ -413,7 +413,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="flex gap-4">
                   <a
-                    href="https://best-toysfor-dogs-15psm5kg6-adolfo11714s-projects.vercel.app/"
+                    href="https://best-toysfor-dogs.vercel.app/"
                     className="text-[#64ffda] hover:text-[#64ffda]/80 transition-colors flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
