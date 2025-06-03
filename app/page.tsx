@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaGlobe, FaCode, FaDatabase, FaServer, FaJava, FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMysql } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaGlobe, FaCode, FaDatabase, FaServer, FaJava, FaNodeJs, FaReact, FaPython, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiMysql, SiFirebase, SiFastapi } from 'react-icons/si';
+import styles from './styles/TechStack.module.css';
 
 export default function ProfilePage() {
   return (
@@ -16,7 +17,7 @@ export default function ProfilePage() {
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20">
                 <Image
                   src="/images/me.jpg"
-                  alt="Adolfo Martinez"
+                  alt="Your Name"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
@@ -26,8 +27,6 @@ export default function ProfilePage() {
             </div>
             <div className="space-y-6">
               <div className="flex items-center justify-center gap-3 text-[#64ffda] mb-4">
-                <h2 className="text-sm font-mono">About Me</h2>
-                <div className="h-px w-20 bg-[#64ffda]"></div>
               </div>
               <h1 className="text-6xl font-bold">
                 <span className="text-[#64ffda]">&lt;</span>
@@ -35,8 +34,17 @@ export default function ProfilePage() {
                 <span className="text-[#64ffda]">/&gt;</span>
               </h1>
               <p className="text-2xl text-gray-400 max-w-2xl leading-relaxed">
-                I am a Junior Developer studying Computer Science at UNCC, passionate about creating impactful technological solutions.
+                I am a Junior Developer studying Computer Science at UNCC with a concentration in Software Engineering, passionate about creating impactful technological solutions.
               </p>
+              <a
+                href="/resume.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg font-medium hover:bg-[#64ffda]/90 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>View Resume</span>
+                <FaGlobe className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -105,6 +113,107 @@ export default function ProfilePage() {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section className="py-24 bg-[#0a192f]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 text-[#64ffda] mb-4">
+              <h2 className="text-4xl font-bold text-white">Projects</h2>
+              <div className="h-px w-20 bg-[#64ffda]"></div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Project 1 */}
+            <div className="bg-[#112240] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#64ffda]/20">
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3">Personal Portfolio</h3>
+                <p className="text-gray-400 mb-4">
+                  A modern, responsive portfolio website built with Next.js and Tailwind CSS. Features a clean design, smooth animations, and a tech stack showcase.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">Next.js</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">Tailwind CSS</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">React</span>
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/adolfo11714/personal-portfolio"
+                    className="text-[#64ffda] hover:text-[#64ffda]/80 transition-colors flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-[#64ffda] hover:text-[#64ffda]/80 transition-colors flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGlobe className="w-5 h-5" />
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="bg-[#112240] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#64ffda]/20">
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3">My Air Charlotte</h3>
+                <p className="text-gray-400 mb-4">
+                  Built a responsive business website using Next.js and Tailwind CSS, implementing SEO optimization and creating an intuitive user interface for a local air quality company.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">Next.js</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">Tailwind CSS</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">React</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">SEO</span>
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://myairclt.com"
+                    className="text-[#64ffda] hover:text-[#64ffda]/80 transition-colors flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGlobe className="w-5 h-5" />
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-[#112240] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-[#64ffda]/20">
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3">Restaurant API</h3>
+                <p className="text-gray-400 mb-4">
+                  Collaborated with a team of 4 to develop a RESTful API using Python and FastAPI, featuring Swagger UI documentation and MySQL database integration for restaurant management.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">Python</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">FastAPI</span>
+                  <span className="px-3 py-1 text-sm bg-[#0a192f] text-[#64ffda] rounded-full">MySQL</span>
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/adolfo11714/RestaurantAPI"
+                    className="text-[#64ffda] hover:text-[#64ffda]/80 transition-colors flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tech Stack Section */}
       <section className="py-24 bg-[#0a192f]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,22 +223,54 @@ export default function ProfilePage() {
               <div className="h-px w-20 bg-[#64ffda]"></div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center">
-            {[
-              { name: 'Java', icon: <FaJava className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
-              { name: 'Next.js', icon: <SiNextdotjs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
-              { name: 'Node.js', icon: <FaNodeJs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
-              { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
-              { name: 'SQL', icon: <SiMysql className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
-            ].map((tech) => (
-              <div
-                key={tech.name}
-                className={`${tech.color} px-6 py-3 rounded-lg text-sm font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2`}
-              >
-                {tech.icon}
-                {tech.name}
-              </div>
-            ))}
+          <div className={styles.container}>
+            <div className={styles.animateScroll}>
+              {[
+                { name: 'Java', icon: <FaJava className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Python', icon: <FaPython className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'HTML5', icon: <FaHtml5 className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'CSS', icon: <FaCss3Alt className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'JavaScript', icon: <FaJs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'C/C++', icon: <FaCode className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Next.js', icon: <SiNextdotjs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Node.js', icon: <FaNodeJs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'SQL', icon: <SiMysql className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Firebase', icon: <SiFirebase className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'FastAPI', icon: <SiFastapi className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+              ].map((tech, index) => (
+                <div
+                  key={tech.name}
+                  className={`${tech.color} px-6 py-3 rounded-lg text-sm font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 mx-2 flex-shrink-0`}
+                >
+                  {tech.icon}
+                  {tech.name}
+                </div>
+              ))}
+              {/* Duplicate items for seamless loop */}
+              {[
+                { name: 'Java', icon: <FaJava className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Python', icon: <FaPython className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'HTML5', icon: <FaHtml5 className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'CSS', icon: <FaCss3Alt className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'JavaScript', icon: <FaJs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'C/C++', icon: <FaCode className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Next.js', icon: <SiNextdotjs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Node.js', icon: <FaNodeJs className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'SQL', icon: <SiMysql className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'Firebase', icon: <SiFirebase className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+                { name: 'FastAPI', icon: <SiFastapi className="w-6 h-6" />, color: 'bg-[#112240] text-[#64ffda] border border-[#64ffda]/20' },
+              ].map((tech, index) => (
+                <div
+                  key={`${tech.name}-duplicate`}
+                  className={`${tech.color} px-6 py-3 rounded-lg text-sm font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 mx-2 flex-shrink-0`}
+                >
+                  {tech.icon}
+                  {tech.name}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
