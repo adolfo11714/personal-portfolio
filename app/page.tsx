@@ -69,7 +69,7 @@ export default function ProfilePage() {
                 I am a Junior Developer studying Computer Science at UNCC with a concentration in Software Engineering, passionate about creating impactful technological solutions.
               </p>
               <a
-                href="/resume.pdf"
+                href="/AdolfoEMartinezResume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-lg font-medium hover:bg-[#64ffda]/90 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
