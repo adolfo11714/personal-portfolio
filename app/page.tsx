@@ -1,11 +1,43 @@
+'use client';
+
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaGlobe, FaCode, FaDatabase, FaServer, FaJava, FaNodeJs, FaReact, FaPython, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaGlobe, FaCode, FaDatabase, FaServer, FaJava, FaNodeJs, FaReact, FaPython, FaHtml5, FaCss3Alt, FaJs, FaArrowUp } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMysql, SiFirebase, SiFastapi } from 'react-icons/si';
 import styles from './styles/TechStack.module.css';
+import { useEffect, useState } from 'react';
 
 export default function ProfilePage() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <main className="min-h-screen bg-[#0a192f] text-gray-100">
+      {/* Back to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 bg-[#64ffda] text-[#0a192f] rounded-full shadow-lg hover:bg-[#4cd8b2] transition-all duration-300 z-50"
+          aria-label="Back to top"
+        >
+          <FaArrowUp className="w-6 h-6" />
+        </button>
+      )}
+
       {/* Hero Section */}
       <section className="relative bg-[#0a192f] text-white py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-60 mix-blend-overlay"></div>
